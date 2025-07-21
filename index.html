@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrega de Fotos - Graduación COBACH 06</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        .logo-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo-container img {
+            max-height: 100px;
+        }
+        .client-selector {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        select, input[type="password"] {
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            width: 80%;
+            max-width: 400px;
+            margin: 10px 0;
+        }
+        .client-display {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: none;
+            margin-top: 20px;
+        }
+        .client-photo {
+            width: 250px;
+            height: 250px;
+            margin: 0 auto 20px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .client-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .client-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .client-session {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .password-section {
+            margin: 20px 0;
+        }
+        .download-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #4285F4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+            cursor: pointer;
+            border: none;
+        }
+        .download-btn:hover {
+            background-color: #3367D6;
+        }
+        .download-btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        .error-message {
+            color: #d32f2f;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <img src="logo.png" alt="Logo Graduación COBACH 06">
+    </div>
+
+    <div class="client-selector">
+        <h2>Selecciona tu nombre para ver tus fotos</h2>
+        
+        <select id="clientList" onchange="loadClient()">
+            <option value="">-- Selecciona tu nombre --</option>
+            <!-- Las opciones se cargan desde clients.js -->
+        </select>
+    </div>
+
+    <div id="clientDisplay" class="client-display">
+        <div class="client-photo">
+            <img id="clientPhoto" src="" alt="Foto del graduado">
+        </div>
+        
+        <div class="client-name" id="clientName"></div>
+        <div class="client-session" id="clientSession">Graduación COBACH 06 Generación 2022-2025</div>
+        
+        <div class="password-section">
+            <p>Ingresa la contraseña que te proporcionamos:</p>
+            <input type="password" id="clientPassword" placeholder="Contraseña" oninput="checkPassword()">
+            <div id="errorMessage" class="error-message">Contraseña incorrecta</div>
+        </div>
+        
+        <button id="downloadBtn" class="download-btn" disabled onclick="redirectToDrive()">Descargar mis fotos</button>
+    </div>
+
+    <!-- Archivo JavaScript externo para los datos de clientes -->
+    <script src="clients.js"></script>
+    
+    <!-- Script principal -->
+    <script>
+        let currentClient = null;
+
+        // Cargar opciones del select al iniciar
+        document.addEventListener('DOMContentLoaded', function() {
+            const select = document.getElementById('clientList');
+            
+            // Ordenar clientes alfabéticamente por nombre
+            const sortedClients = Object.values(clients).sort((a, b) => 
+                a.name.localeCompare(b.name));
+            
+            // Generar opciones del select
+            sortedClients.forEach(client => {
+                const option = document.createElement('option');
+                const clientId = client.name.split(' ')[0].toLowerCase();
+                option.value = clientId;
+                option.textContent = client.name;
+                select.appendChild(option);
+            });
+        });
+
+        function loadClient() {
+            const select = document.getElementById("clientList");
+            const clientId = select.value;
+            const display = document.getElementById("clientDisplay");
+            
+            if (!clientId) {
+                display.style.display = "none";
+                return;
+            }
+            
+            currentClient = Object.values(clients).find(c => 
+                c.name.split(' ')[0].toLowerCase() === clientId);
+            
+            // Mostrar información del cliente
+            document.getElementById("clientName").textContent = currentClient.name;
+            document.getElementById("clientPhoto").src = currentClient.photo;
+            
+            // Resetear campo de contraseña
+            document.getElementById("clientPassword").value = "";
+            document.getElementById("errorMessage").style.display = "none";
+            document.getElementById("downloadBtn").disabled = true;
+            
+            // Mostrar el área del cliente
+            display.style.display = "block";
+        }
+
+        function checkPassword() {
+            const passwordInput = document.getElementById("clientPassword");
+            const errorMessage = document.getElementById("errorMessage");
+            const downloadBtn = document.getElementById("downloadBtn");
+            
+            if (passwordInput.value === currentClient.password) {
+                downloadBtn.disabled = false;
+                errorMessage.style.display = "none";
+            } else {
+                downloadBtn.disabled = true;
+                if (passwordInput.value.length > 0) {
+                    errorMessage.style.display = "block";
+                } else {
+                    errorMessage.style.display = "none";
+                }
+            }
+        }
+
+        function redirectToDrive() {
+            window.open(currentClient.driveLink, "_blank");
+        }
+    </script>
+</body>
+</html>
