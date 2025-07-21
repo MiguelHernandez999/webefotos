@@ -2,7 +2,7 @@
 const clients = {
     "ailyn": {
         name: "Ailyn Villavicencio García",
-        photo: "URL_FOTO_AILYN",
+        photo: "ailyn.jpg",
         driveLink: "https://drive.google.com/drive/folders/1GLFiVE4h6UH9b-1levQz2njAz6f1RVOW?usp=sharing",
         password: "AilVil789"
     },
@@ -14,7 +14,7 @@ const clients = {
     },
     "genesis": {
         name: "Genesis Amador Villavicencio",
-        photo: "URL_FOTO_GENESIS",
+        photo: "genesis.jpg",
         driveLink: "https://drive.google.com/drive/folders/15R8FMH_SIFhjnt_X35OtzwSDnbcoj5sc?usp=sharing",
         password: "GenAma123"
     },
@@ -38,19 +38,19 @@ const clients = {
     },
     "mariana": {
         name: "Mariana Fuerte Rojas",
-        photo: "URL_FOTO_MARIANA",
+        photo: "mariana.jpg",
         driveLink: "https://drive.google.com/drive/folders/1GowNl8MmQBy0PR3Qu2QGaKqwdvR4gzd3?usp=sharing",
         password: "MarFue789"
     },
     "marina": {
         name: "Marina Rosales Aguilar",
-        photo: "URL_FOTO_MARINA",
+        photo: "marina.jpg",
         driveLink: "https://drive.google.com/drive/folders/1blvl_ePbNDvfI1CgpOtYOGV9I9qADvq3?usp=sharing",
         password: "MarRos456"
     },
     "nereida": {
         name: "Nereida Moreno Leal",
-        photo: "URL_FOTO_NEREIDA",
+        photo: "nereida.jpg",
         driveLink: "https://drive.google.com/drive/folders/1c63kwn2TR_gag_-1EjsUzPQ5jzQEAjnN?usp=sharing",
         password: "NerMor123"
     },
@@ -74,19 +74,19 @@ const clients = {
     },
     "sofia": {
         name: "Sofía Palafox García",
-        photo: "URL_FOTO_SOFIA",
+        photo: "sofia.jpg",
         driveLink: "https://drive.google.com/drive/folders/1S6KcelJS-ceGcCXgLdjzrlxRUmFs0Gue?usp=sharing",
         password: "SofPal789"
     },
     "valeria": {
         name: "Valeria González Michel",
-        photo: "URL_FOTO_VALERIA",
+        photo: "valeria.jpg",
         driveLink: "https://drive.google.com/drive/folders/1FkSYJJ6k6q5MEfxSVFEJ6Hiox3-VCYkb?usp=sharing",
         password: "ValGon456"
     },
     "wendy": {
         name: "Wendy Arias Benítez",
-        photo: "URL_FOTO_WENDY",
+        photo: "wendy.jpg",
         driveLink: "https://drive.google.com/drive/folders/1yt8gsqtpKwyKsElsJaQbkDSCRk_KHqEv?usp=sharing",
         password: "WenAri123"
     }
