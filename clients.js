@@ -3,7 +3,7 @@ const clients = {
     "ailyn": {
         name: "Ailyn Villavicencio García",
         photo: "ailyn.jpg",
-        driveLink: "https://drive.google.com/drive/folders/1GLFiVE4h6UH9b-1levQz2njAz6f1RVOW?usp=sharing",
+        driveLink: "https://drive.google.com/drive/folders/1rjHSBrvo4RKrdhWO5gyunstQIsNlI6Q9?usp=sharing",
         password: "AilVil789"
     },
     "emily": {
@@ -21,18 +21,18 @@ const clients = {
     "irlanda": {
         name: "Irlanda Hernández Espinoza",
         photo: "irlanda.jpg",
-        driveLink: "https://drive.google.com/drive/folders/1rjHSBrvo4RKrdhWO5gyunstQIsNlI6Q9?usp=sharing",
+        driveLink: "https://drive.google.com/drive/folders/1GLFiVE4h6UH9b-1levQz2njAz6f1RVOW?usp=sharing",
         password: "IrlHer789"
     },
     "jareth": {
         name: "Jareth Romo Covarrubias",
-        photo: "URL_FOTO_JARETH",
+        photo: "jareth.jpg",
         driveLink: "https://drive.google.com/drive/folders/1jjVxM0QqxXLZyO_kPQSjFX_kyM5PE2oF?usp=sharing",
         password: "JarRom456"
     },
     "julio": {
         name: "Julio González Villavicencio",
-        photo: "URL_FOTO_JULIO",
+        photo: "Julio.jpg",
         driveLink: "https://drive.google.com/drive/folders/1JGzn8gGKyHm0efvHLcLgoHKJo92eLPtE?usp=sharing",
         password: "JulGon123"
     },
@@ -56,19 +56,19 @@ const clients = {
     },
     "paul": {
         name: "Paul Arce Fernandez",
-        photo: "URL_FOTO_PAUL",
+        photo: "Paul.jpg",
         driveLink: "https://drive.google.com/drive/folders/12eaV4ZAh9O8jqNHQV_1F4paJbdfZHQz9?usp=sharing",
         password: "PauArc789"
     },
     "roberto": {
         name: "Roberto González Cañedo",
-        photo: "URL_FOTO_ROBERTO",
+        photo: "roberto.jpg",
         driveLink: "https://drive.google.com/drive/folders/1ccrR_4XGHRpQJesDM__M0LFe6cSDTZPn?usp=sharing",
         password: "RobGon456"
     },
     "sergio": {
         name: "Sergio Landeros Altamirano",
-        photo: "URL_FOTO_SERGIO",
+        photo: "sergio.jpg",
         driveLink: "https://drive.google.com/drive/folders/1H3Bti8UTK0bwEi_sg0ZV9QyQLTuJk_Gh?usp=sharing",
         password: "SerLan123"
     },
