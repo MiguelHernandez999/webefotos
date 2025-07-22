@@ -20,7 +20,7 @@ const clients = {
     },
     "irlanda": {
         name: "Irlanda Hernández Espinoza",
-        photo: "URL_FOTO_IRLANDA",
+        photo: "irlanda.jpg",
         driveLink: "https://drive.google.com/drive/folders/1rjHSBrvo4RKrdhWO5gyunstQIsNlI6Q9?usp=sharing",
         password: "IrlHer789"
     },
